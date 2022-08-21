@@ -12,6 +12,7 @@ namespace SustainableSeasTrust.Models
         public string diversity { get; set; }
         public string website { get; set; }
         public string imgurl { get; set; }
+        public string iconurl { get; set; }
 
         private List<Species> Animals;
         private List<Activity> Activities;

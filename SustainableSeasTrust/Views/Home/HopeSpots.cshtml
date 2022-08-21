@@ -1,7 +1,81 @@
-﻿
+﻿@model List<SustainableSeasTrust.Models.HopeSpot>
 @{
     ViewBag.Title = "HopeSpots";
 }
+<div class="py-5 bg-image-full" id="bgimg">
+    <div class="text-center my-5">
+        <h1 class="text-white">HopeSpots</h1>
+        <br />
+        <p class="text-center text-white col-md-8 mx-auto">
+            <i>‘Hope Spots are special places that are critical to the health of the ocean.’ ~ Dr Sylvia Earle </i>
+            <br />
+            They are marine areas of ecological and biodiversity significance around the world. The Hope Spot movement was started by world-renowned oceanographer Dr Sylvia Earle to unite global efforts to protect the sea by raising public awareness, access and support for a worldwide network of marine protected areas.
+        </p>
+    </div>
+</div>
 
-<h2>HopeSpots</h2>
+<div class="container-md justify-content-center">
+    <div class="row">
+
+        @foreach (var hopespot in Model)
+        {
+        <a href="@Url.Action(hopespot.name, hopespot.name)">
+            <div class="card col-md-4">
+                <div class="card-title">
+                    <h3>@hopespot.name</h3>
+                </div>
+                <img class="card-img-top" src="~/Content/img/@hopespot.iconurl" />
+                <div class="card-body">
+                    Read More
+                </div>
+            </div>
+        </a>
+
+        }
+    </div>
+</div>
+
+
+
+
+    @section scripts {
+
+        <script type="text/javascript">
+
+            window.onload = function () {
+
+                var buttons = document.getElementsByClassName("card col-md-4");
+
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].addEventListener("mouseover", function () {
+
+                        $(this).find(".card-body").css({
+                            "visibility": "visible"
+                        });
+                    });
+
+                    buttons[i].addEventListener("mouseout", function () {
+
+                        $(this).find(".card-body").css({
+                            "visibility": "hidden"
+                        });
+                    });
+
+
+
+                }
+
+
+
+            };
+
+
+
+
+
+
+
+        </script>
+
+    }
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
-   @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <img src="../../Content/img/logo.png" class="img-fluid col-md-1" alt="SST logo" />
@@ -25,20 +25,21 @@
             </div>
         </div>
     </nav>
-    
 
-            @RenderBody()
-       
+    @RenderBody()
 
-    <footer class="border-top footer text-muted fixed-bottom">
-        <div class="container">
+
+
+    <footer class="border-top footer text-muted position-relative">
+
             222 Main Rd, Walmer, Gqeberha, 6065 | +27 76 608 3587 info@sst.org.za
             NPO Number: 078-120-NPO | PBO Number: PBO 930022444© Sustainable Seas Trust
-        </div>
+
     </footer>
 
+
     @Scripts.Render("~/bundles/jquery")
+
     @RenderSection("scripts", required: false)
-   
 </body>
 </html>

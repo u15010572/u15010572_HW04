@@ -18,6 +18,7 @@ namespace SustainableSeasTrust.Controllers
 
         public ActionResult HopeSpots()
         {
+            hopespots.Clear();
             HopeSpot HS1 = new HopeSpot(
                 "Algoa Bay",
                 "Algoa Bay is one of the South Africa’s largest bays, and richest thanks to the fact that it’s at the conjuncture of two oceanic systems, the Cape Agulhas and the upwelling current of the Benguela: two systems means two different ecosystems.",
@@ -33,7 +34,8 @@ namespace SustainableSeasTrust.Controllers
             HS1.addActivity("Dive Deeper", "The silent blue world of the bay contains amazing soft corals and exceptional marine diversity. Evania Snyman of Elite Scuba PE, for one, has found over 50 species of nudibranch in her years of diving. Commercial reef and wreck tours are offered by a variety of operators; visibility is generally better in winter. But even beginners can go looking for toothy ‘raggie’ sharks in alleys just five minutes off Hobie beach from November to May.", "https://www.elitescuba.co.za/");
             HS1.addActivity("Canter on an empty beach", "Heavenly Stables offers 2.5 to three-hour rides through the Sardina Nature Reserve; a section of the route unfurls on the wide beach, part of a Marine Protected Area. Besides playing centaur, one may see antelope in the reserve and whales or dolphins in the water.", "https://heavenlystables.co.za/");
             HS1.addActivity("Dip into the past", "Bayworld’s museums and oceanarium, where in the marine hall, some early models of fish were carved from wood and then painted, unlike today’s fibreglass casts.  Bayworld cares for the largest marine mammal collection in the southern hemisphere and 20,300 ear-bones from marine bony fishes… Contact them for any strandings.", "https://www.bayworld.co.za/");
-           hopespots.Add(HS1);
+            HS1.iconurl = "AlgoaBay.jpg";
+            hopespots.Add(HS1);
 
             HopeSpot HS2 = new HopeSpot(
                 "Plettenburg Bay",
@@ -52,7 +54,7 @@ namespace SustainableSeasTrust.Controllers
             HS2.addBeach("Arch Rock", "A ‘path less travelled’ and there are beautiful rock pools and caves to explore.Park at Enrico Ristorante in Keurbooms village and walk east.", "https://goo.gl/maps/tmqU5qc8nVPt8wbe6");
             HS2.addBeach("Lookout Beach", "A walk from the car park at Lemongrass restaurant to the Keurbooms River mouth and around the edge of the lagoon. Breeding seabirds nest here. Please note: no dogs are allowed on this beach.", "https://goo.gl/maps/9ujHG4pa2RaBirRn6");
             HS2.addBeach("Poortjies Beach", "On the edges of the Keurbooms estuary. The area offers several dog-friendly beaches, the favourite being at the end of Robberg Beach, from Sanctuary Beach to Wreck Beach. New regulations have been put in place to protect breeding seabirds and a dogs-on-leashes rule is being enforced. Look out for the signs telling you which beaches are dog friendly, either on or off the leash. Watch hermit crabs scuttle away from you, or hire a SUP board and explore further.", "https://goo.gl/maps/Dq6f7c2o412qkp327");
-
+            HS2.iconurl = "PlettenbergBay.jpeg";
             hopespots.Add(HS2);
 
             HopeSpot HS3 = new HopeSpot(
@@ -72,7 +74,8 @@ namespace SustainableSeasTrust.Controllers
             HS3.addActivity("Watch whales from the air", "Seeing whales from a bird’s eye view allows you to get a sense of their full environmental context and is a remarkable experience. There are two operators in the area. African Wins departs from Stanford airstrip and takes one to three people.", "https://www.africanwings.co.za/");
             HS3.addBeach("Walker bay", "Part of a nature reserve and stretches kilometres, from Klein River to Gansbaai. It’s a blue flag beach and the sea is wonderfully clear, and in season there are lifeguards (and a bar). There are also sheltered nooks in which you can snorkel, and coastal caves to explore. Plus there’s plenty of birdlife.", "https://goo.gl/maps/gp61H3X5G9G3iVaMA");
             HS3.addBeach("The old harbour", "Beach in the centre of Hermanus has a small sandy patch that goes down to a stunning snorkeling area that is very biodiverse.", "https://goo.gl/maps/w4fKaYEn6u7eJFvp8");
-           hopespots.Add(HS3);
+            HS3.iconurl = "CapeWhaleCoast.jpg";
+            hopespots.Add(HS3);
 
             HopeSpot HS4 = new HopeSpot(
                "Aliwal Shoal",
@@ -82,7 +85,8 @@ namespace SustainableSeasTrust.Controllers
                "shark.jpg"
                );
             HS4.addSpecies("Ragged-tooth shark", "This fierce-looking creature can grow to about 3,2 metres, and live up to 40 years. Their teeth grow in rows and forwards, so they’re assured of constant, sharp new tools and can lose and replace thousands in their lifetime. They gather around KZN’s southern waters and in the northern Eastern Cape to mate in November and December, then head north to Mozambique to gestate. They come back to waters around the Kei River to give birth.", "Carcharias", "taurus");
-           hopespots.Add(HS4);
+            HS4.iconurl = "AliwalShoal.jpg";
+            hopespots.Add(HS4);
 
             HopeSpot HS5 = new HopeSpot(
                "Knysna",
@@ -92,7 +96,8 @@ namespace SustainableSeasTrust.Controllers
                "seahorse.jpg"
                );
             HS5.addSpecies("Knysna seahorse", "These amazing, fantastical creatures are tiny; they only grow to about 12 centimetres in length. There are over 30 kinds of seahorses, but only five are evident around southern African shores, of which this is one. The Knysna seahorse, which ranges in colour from green to brown, is only found in the Knysna, Keurbooms and Swartvlei estuaries and is endangered.", "Hippocampus", "capensis");
-           hopespots.Add(HS5);
+            HS5.iconurl = "Knysna.jpg";
+            hopespots.Add(HS5);
 
             HopeSpot HS6 = new HopeSpot(
               "False Bay",
@@ -102,10 +107,9 @@ namespace SustainableSeasTrust.Controllers
               "orca.jpg"
               );
             HS6.addSpecies("Great white shark", "can reach up to six metres – the female is bigger than the male. Although many studies are ongoing, there is still some mystery surrounding facts about this impressive creature – it’s thought they grow as old as 70 years, that the males take over 20 years to reach sexual maturity, while the females take over 30. This low reproduction rate is what makes them more rare. They are listed as vulnerable.", "Carcharodon", "carcharias");
-            HS3.addBeach("Gordon's Bay", "Gordon's Bay is a small picturesque seaside townon the eastern side of False Bay. Framed with the exquisite views of the slopes of Hottentots Hollandin the background, it enjoys the warm Mediterranean climate.", "https://goo.gl/maps/Qb3mNC2p2fcTjxQr9");
-            HS3.addBeach("Boulder's Beach", "Boulders beach is found in Simon's Town and is one of the most beautiful beaches in Cape Town.It is a cove of fine sand and big granite boulders. The big round granite boulders are estimated to date back to 540 million yearsand protect the beach from currents, gusts of winds and large waves.Boulders beach is part of the Table Mountain National Park Marine Protected Areaand an access fee is required to go to the beach. Strict control to the beach makes it that the beach is always clean and tidy.Other amenities include toilets and outdoor beach showers. Park rangers keep patrolling the beach to ensure the safety of visitors as well as the African Penguins.", "https://goo.gl/maps/AiKkCmpnsyQdzwqq5");
-
-
+            HS6.addBeach("Gordon's Bay", "Gordon's Bay is a small picturesque seaside townon the eastern side of False Bay. Framed with the exquisite views of the slopes of Hottentots Hollandin the background, it enjoys the warm Mediterranean climate.", "https://goo.gl/maps/Qb3mNC2p2fcTjxQr9");
+            HS6.addBeach("Boulder's Beach", "Boulders beach is found in Simon's Town and is one of the most beautiful beaches in Cape Town.It is a cove of fine sand and big granite boulders. The big round granite boulders are estimated to date back to 540 million yearsand protect the beach from currents, gusts of winds and large waves.Boulders beach is part of the Table Mountain National Park Marine Protected Areaand an access fee is required to go to the beach. Strict control to the beach makes it that the beach is always clean and tidy.Other amenities include toilets and outdoor beach showers. Park rangers keep patrolling the beach to ensure the safety of visitors as well as the African Penguins.", "https://goo.gl/maps/AiKkCmpnsyQdzwqq5");
+            HS6.iconurl = "FalseBay.jpg";
             hopespots.Add(HS6);
 
 
