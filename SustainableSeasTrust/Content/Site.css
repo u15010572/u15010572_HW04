@@ -1,4 +1,9 @@
-﻿a{
+﻿.form {
+
+    display:none;
+    color: white;
+}
+a{
     color:black;
     text-decoration:none;
 }
@@ -23,7 +28,10 @@ nav {
     padding-left: 3vh;
     padding-right: 3vh;
 }
-
+.p-3{
+    border: 2px solid white;
+    border-radius: 2rem;
+}
 header {
     background-image: linear-gradient(to bottom, rgba(13, 21, 34, 0.35), rgba(2, 49, 75,1 )), url("img/whale.jpg");
     height: 100vh;
@@ -64,6 +72,14 @@ header {
     background-color: rgba(13, 21, 34, 0.7);
    visibility: hidden;
     color:white;
+}
+
+button{
+    background-color: lightblue;
+    color: black;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 2rem;
 }
 
 
