@@ -14,9 +14,9 @@ namespace SustainableSeasTrust.Models
         public string imgurl { get; set; }
         public string iconurl { get; set; }
 
-        private List<Species> Animals;
-        private List<Activity> Activities;
-        private List<Beach> Beaches;
+        public List<Species> Animals;
+        public List<Activity> Activities;
+        public List<Beach> Beaches;
 
         public HopeSpot(string Name, string Descr, string div, string site, string img)
         {

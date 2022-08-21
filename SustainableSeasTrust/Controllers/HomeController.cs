@@ -15,7 +15,7 @@ namespace SustainableSeasTrust.Controllers
         {
             return View();
         }
-
+      
         public ActionResult HopeSpots()
         {
             hopespots.Clear();

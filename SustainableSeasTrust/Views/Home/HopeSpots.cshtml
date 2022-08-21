@@ -1,4 +1,5 @@
 ﻿@model List<SustainableSeasTrust.Models.HopeSpot>
+
 @{
     ViewBag.Title = "HopeSpots";
 }
@@ -19,63 +20,141 @@
 
         @foreach (var hopespot in Model)
         {
-        <a href="@Url.Action(hopespot.name, hopespot.name)">
+
             <div class="card col-md-4">
-                <div class="card-title">
-                    <h3>@hopespot.name</h3>
-                </div>
-                <img class="card-img-top" src="~/Content/img/@hopespot.iconurl" />
-                <div class="card-body">
-                    Read More
-                </div>
+                <a href="#@hopespot.name">
+                    <div class="card-title">
+                        <h3>@hopespot.name</h3>
+                    </div>
+                    <img class="card-img-top" src="~/Content/img/@hopespot.iconurl" />
+                    <div class="card-body">
+                        Read More
+                    </div>
+                </a>
             </div>
-        </a>
+
 
         }
     </div>
 </div>
 
+<div class="mycontainer">
+    @foreach (var hopespot in Model)
+    {
+        <div class="row align-items-center" style="background-image: linear-gradient(to bottom, rgba(13, 21, 34, 0.35), rgba(2, 49, 75,1 )), url('../../Content/img/@hopespot.imgurl');
+         height: 100vh;
+         background-size: cover;" id="@hopespot.name">
+            <div>
+                <h1 class="text-center text-white">@hopespot.name</h1>
+                <br />
+                <p class="text-center text-white col-md-8 mx-auto">
+                    @hopespot.description
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mx-auto text-white">
+                <h3>Diversity</h3>
+                <br />
+                <p>@hopespot.diversity</p>
+                <br />
 
-
-
-    @section scripts {
-
-        <script type="text/javascript">
-
-            window.onload = function () {
-
-                var buttons = document.getElementsByClassName("card col-md-4");
-
-                for (var i = 0; i < buttons.length; i++) {
-                    buttons[i].addEventListener("mouseover", function () {
-
-                        $(this).find(".card-body").css({
-                            "visibility": "visible"
-                        });
-                    });
-
-                    buttons[i].addEventListener("mouseout", function () {
-
-                        $(this).find(".card-body").css({
-                            "visibility": "hidden"
-                        });
-                    });
-
-
+                <h3>Iconic Species</h3>
+                <br />
+                @for (var i = 0; i < hopespot.Animals.Count(); i++)
+                {
+                    <p>
+                        @hopespot.Animals[i].getName() <i>( @hopespot.Animals[i].getDetails())</i> @hopespot.Animals[i].getDescr()
+                    </p>
+                    <br />
+                }
+                <h3>How to engage with @hopespot.name Hope Spot </h3>
+                <br />
+                @if (hopespot.Activities.Count() ==0)
+                {
+                   <p> The Hope Spots is a citizen - driven project, and we’re still gathering our list of things to do in the 
+                      @hopespot.name Hope Spot.If you have some suggestions, please mail these to info@sst.org.za with the words 
+                      ‘Hope Spot things to do’ in the subject line. Also, if you are interested in driving the @hopespot.name Hope Spot 
+                      as a project, we would welcome a discussion about what it would involve. Mail us on info@sst.org.za, with the words: 
+                      @hopespot.name Hope Spot project in the subject line.</p>
+                }
+                else {
+                    for (var i = 0; i < hopespot.Activities.Count(); i++)
+                    {
+                        <h5>@hopespot.Activities[i].getName()</h5>
+                        <p>@hopespot.Activities[i].getDescr()</p>
+                        <a href="@hopespot.Activities[i].getDetails()"><p>@hopespot.Activities[i].getDetails()</p></a>
+                        <br />
+                    }
+                }
+                @if (hopespot.Beaches.Count() ==0)
+                {
 
                 }
+                else
+                {<h3>Beaches to Explore</h3>
+                    <br />
+                    for (var i = 0; i < hopespot.Beaches.Count(); i++)
+                    {
+                        <h5>@hopespot.Beaches[i].getName()</h5>
+                        <p>@hopespot.Beaches[i].getDescr()</p>
+                        <a href="@hopespot.Beaches[i].getDetails()"><p>@hopespot.Beaches[i].getDetails()</p></a>
+                        <br />
+                    }
+                }
+
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
 
 
-
-            };
-
-
-
-
-
-
-
-        </script>
 
     }
+</div>
+
+
+
+
+@section scripts {
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var buttons = document.getElementsByClassName("card col-md-4");
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener("mouseover", function () {
+
+                    $(this).find(".card-body").css({
+                        "visibility": "visible"
+                    });
+                });
+
+                buttons[i].addEventListener("mouseout", function () {
+
+                    $(this).find(".card-body").css({
+                        "visibility": "hidden"
+                    });
+                });
+
+
+
+            }
+
+
+
+        };
+
+
+
+
+
+
+
+    </script>
+
+}
 
